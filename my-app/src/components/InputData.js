@@ -24,12 +24,16 @@ const InputData = () => {
     <div>
       <h1 className="text-center mt-5">My Workout 🏃‍♂️🏃‍♀️</h1>
       <form className="d-flex mt-5" onSubmit={onSubmitForm}>
-        <input
+        {/* <input
           type="text"
           className="form-control"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
-        />
+        /> */}
+        <input type="text" placeholder="name"></input>
+        <input type="text" placeholder="age"></input>
+        <input type="text" placeholder="weight"></input>
+        <input type="text" placeholder="height"></input>
         <button className="btn btn-success">Register!</button>
       </form>
     </div>
@@ -37,18 +41,3 @@ const InputData = () => {
 };
 
 export default InputData;
-
-// return (
-//   <div>
-//     <h1 className="text-center mt-5">My Workout 🏃‍♂️🏃‍♀️</h1>
-//     <form className="d-flex mt-5" onSubmit={onSubmitForm}>
-//       <input
-//         type="text"
-//         className="form-control"
-//         value={weight}
-//         onChange={(e) => setWeight(e.target.value)}
-//       />
-//       <button className="btn btn-success">Register!</button>
-//     </form>
-//   </div>
-// );

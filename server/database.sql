@@ -6,6 +6,4 @@ CREATE TABLE mydata(
     age int,
     weight int,
     height int,
-    gender varchar(1),
-    date date
 );

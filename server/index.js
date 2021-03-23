@@ -10,19 +10,19 @@ app.use(express.json());
 //ROUTES
 
 // POST;
-// app.post("/datas", async (req, res) => {
-//   try {
-//     const { name } = req.body;
-//     // const { age } = req.body;
-//     const newData = await pool.query(
-//       "INSERT INTO mydata (name, age) VALUES ($1) RETURNING *",
-//       [name]
-//     );
-//     res.json(newData.rows[0]);
-//   } catch (err) {
-//     console.error(err.message);
-//   }
-// });
+app.post("/datas", async (req, res) => {
+  try {
+    const { name } = req.body;
+    // const { age } = req.body;
+    const newData = await pool.query(
+      "INSERT INTO mydata (name, age) VALUES ($1) RETURNING *",
+      [name]
+    );
+    res.json(newData.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
 //GET(allplace)
 app.get("/datas", async (req, res) => {
