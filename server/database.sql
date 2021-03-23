@@ -1,6 +1,11 @@
-CREATE DATABASE travel;
+CREATE DATABASE workoutdata;
 
-CREATE TABLE place(
+CREATE TABLE mydata(
     place_id SERIAL PRIMARY KEY,
-    destination VARCHAR(255)
+    name text,
+    age int,
+    weight int,
+    height int,
+    gender varchar(1),
+    date date
 );

@@ -3,15 +3,15 @@ import "./App.css";
 
 //components
 
-import InputPlace from "./components/InputPlace";
-import ListPlaces from "./components/ListPlaces";
+import InputData from "./components/InputData";
+import ListDatas from "./components/ListDatas";
 
 function App() {
   return (
     <div>
       <div className="container">
-        <InputPlace />
-        <ListPlaces />
+        <InputData />
+        <ListDatas />
       </div>
     </div>
   );
