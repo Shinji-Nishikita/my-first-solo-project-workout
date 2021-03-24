@@ -32,16 +32,15 @@ const InputData = () => {
   return (
     <div>
       <h1 className="text-center mt-5">My Workout 🏃‍♂️🏃‍♀️</h1>
-      <h1>Test</h1>
       <form className="d-flex mt-5" onSubmit={onSubmitForm}>
         <input id="name" type="text" placeholder="name" />
         <input id="age" type="text" placeholder="age" />
-        <input id="weight" type="text" placeholder="weight" />
-        <input id="height" type="text" placeholder="height" />
+        <input id="weight" type="text" placeholder="weight(kg)" />
+        <input id="height" type="text" placeholder="height(cm)" />
         <input
           type="submit"
           className="btn btn-success"
-          placeholder="Register"
+          placeholder="Register!"
         />
       </form>
     </div>

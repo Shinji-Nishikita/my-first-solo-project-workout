@@ -21,10 +21,10 @@ const GetDatas = () => {
     Object.keys(data).map((item) => {
       let result = 0;
       result =
-        13.4 * data[item].weight +
-        4.8 * data[item].height -
-        5.7 * data[item].age +
-        88.3;
+        13 * data[item].weight +
+        5 * data[item].height -
+        6 * data[item].age +
+        88;
       setBmr(result);
     });
   };
@@ -36,18 +36,18 @@ const GetDatas = () => {
       {/* <ul>
         {Object.keys(data).map((item) => {
           return (
-            <> */}
-      {/* <li>{data[item].name}</li>
+            <>
+              <li>{data[item].name}</li>
               <li>{data[item].weight}</li>
               <li>{data[item].height}</li>
-              <li>{data[item].age}</li> */}
-      {/* <li>
+              <li>{data[item].age}</li>
+              <li>
                 {13.397 * data[item].weight +
                   4.799 * data[item].height -
                   5.677 * data[item].age +
                   88.362}
-              </li> */}
-      {/* </>
+              </li>
+            </>
           );
         })}
       </ul> */}
