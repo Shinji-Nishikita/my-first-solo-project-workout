@@ -12,11 +12,11 @@ app.use(express.json());
 // POST;
 app.post("/datas", async (req, res) => {
   try {
-    const { name } = req.body;
-    // const { age } = req.body;
+    const { name, age, weight, height } = req.body;
+    console.log(age);
     const newData = await pool.query(
-      "INSERT INTO mydata (name, age) VALUES ($1) RETURNING *",
-      [name]
+      "INSERT INTO mydata (name, age, weight, height) VALUES ($1, $2, $3, $4) RETURNING *",
+      [name, age, weight, height]
     );
     res.json(newData.rows[0]);
   } catch (err) {
@@ -26,7 +26,6 @@ app.post("/datas", async (req, res) => {
 
 //GET(allplace)
 app.get("/datas", async (req, res) => {
-  console.log("こんにちは");
   try {
     const alldatas = await pool.query("SELECT * FROM mydata");
     // console.log(alldatas.rows);

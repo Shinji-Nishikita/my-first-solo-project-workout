@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-// import InputData from "./InputData";
+import InputData from "./InputData";
 
 const GetDatas = () => {
   const [data, setData] = useState("test");
@@ -21,10 +21,10 @@ const GetDatas = () => {
     Object.keys(data).map((item) => {
       let result = 0;
       result =
-        13.397 * data[item].weight +
-        4.799 * data[item].height -
-        5.677 * data[item].age +
-        88.362;
+        13.4 * data[item].weight +
+        4.8 * data[item].height -
+        5.7 * data[item].age +
+        88.3;
       setBmr(result);
     });
   };

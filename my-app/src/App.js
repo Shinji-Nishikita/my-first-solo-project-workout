@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import "./App.css";
-
 import InputData from "./components/InputData";
 import GetDatas from "./components/GetDatas";
 
