@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const pool = require("./db");
 const path = require("path");
+const PORT = process.env.PORT || 5000;
 
 //middleware
 app.use(cors());
@@ -42,6 +43,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
 });
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   console.log("server started on port 5000");
 });
