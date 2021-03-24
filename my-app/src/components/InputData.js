@@ -18,7 +18,7 @@ const InputData = () => {
       height: height.value,
     };
     console.log(body);
-    await fetch("http://localhost:5000/datas", {
+    await fetch("/datas", {
       method: "POST",
       headers: {
         Accept: "application/json",

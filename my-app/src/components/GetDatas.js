@@ -8,7 +8,7 @@ const GetDatas = () => {
   useEffect(() => {
     const getdata = async () => {
       // console.log("hi");
-      const response = await fetch("http://localhost:5000/datas");
+      const response = await fetch("/datas");
       const jsonData = await response.json();
       // console.log(jsonData);
       setData(jsonData);
