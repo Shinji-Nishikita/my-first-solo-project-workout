@@ -7,13 +7,10 @@ const GetDatas = () => {
 
   useEffect(() => {
     const getdata = async () => {
-      // console.log("hi");
       const response = await fetch("/datas");
       const jsonData = await response.json();
-      // console.log(jsonData);
       setData(jsonData);
     };
-    // console.log("hello");
     getdata();
   }, []);
 
