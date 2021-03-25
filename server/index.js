@@ -8,10 +8,7 @@ const PORT = process.env.PORT || 5000;
 //middleware
 app.use(cors());
 app.use(express.json());
-
 app.use(express.static(path.resolve(__dirname, "..", "build")));
-
-//ROUTES
 
 // POST;
 app.post("/datas", async (req, res) => {
@@ -32,7 +29,6 @@ app.post("/datas", async (req, res) => {
 app.get("/datas", async (req, res) => {
   try {
     const alldatas = await pool.query("SELECT * FROM mydata");
-    // console.log(alldatas.rows);
     res.json(alldatas.rows);
   } catch (err) {
     console.error(err.message);
