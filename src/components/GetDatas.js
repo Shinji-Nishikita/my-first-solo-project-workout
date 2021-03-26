@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from "react";
-import InputData from "./InputData";
 
 const GetDatas = () => {
   const [data, setData] = useState("test");

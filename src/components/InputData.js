@@ -1,15 +1,13 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 
 const InputData = () => {
-  // const [weight, setWeight] = useState("");
-
   const onSubmitForm = async (e) => {
     e.preventDefault();
     const name = document.getElementById("name");
     const age = document.getElementById("age");
     const weight = document.getElementById("weight");
     const height = document.getElementById("height");
-    console.log(name.value);
+    // console.log(name.value);
 
     const body = {
       name: name.value,
@@ -17,7 +15,7 @@ const InputData = () => {
       weight: weight.value,
       height: height.value,
     };
-    console.log(body);
+    // console.log(body);
     await fetch("/datas", {
       method: "POST",
       headers: {
@@ -26,7 +24,7 @@ const InputData = () => {
       },
       body: JSON.stringify(body),
     });
-    console.log("GOT!!!");
+    // console.log("GOT!!!");
   };
 
   return (
