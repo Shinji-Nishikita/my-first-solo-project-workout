@@ -5,6 +5,7 @@ const pool = require("./db");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
 const { Client } = require("pg");
+require("dotenv").config();
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
