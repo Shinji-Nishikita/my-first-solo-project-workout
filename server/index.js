@@ -9,6 +9,7 @@ require("dotenv").config();
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
+  ssl: true,
 });
 client.connect();
 
@@ -19,10 +20,16 @@ app.use(express.static(path.resolve(__dirname, "..", "build")));
 
 console.log("Database_URL", process.env.DATABASE_URL);
 // POST;
+process.on("unhandledRejection", (reason, promise) => {
+  console.error(reason);
+  process.exit(1);
+});
+
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 app.post("/datas", async (req, res) => {
   try {
     const { name, age, weight, height } = req.body;
-    console.log(age);
+    // console.log(age);
     const newData = await pool.query(
       "INSERT INTO mydata (name, age, weight, height) VALUES ($1, $2, $3, $4) RETURNING *",
       [name, age, weight, height]
