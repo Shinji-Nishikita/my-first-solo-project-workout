@@ -26,19 +26,19 @@ process.on("unhandledRejection", (reason, promise) => {
 });
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
-// app.post("/datas", async (req, res) => {
-//   try {
-//     const { name, age, weight, height } = req.body;
-//     // console.log(age);
-//     const newData = await pool.query(
-//       "INSERT INTO mydata (name, age, weight, height) VALUES ($1, $2, $3, $4) RETURNING *",
-//       [name, age, weight, height]
-//     );
-//     res.json(newData.rows[0]);
-//   } catch (err) {
-//     console.error(err.message);
-//   }
-// });
+app.post("/datas", async (req, res, next) => {
+  try {
+    const { name, age, weight, height } = req.body;
+    // console.log(age);
+    const newData = await pool.query(
+      "INSERT INTO mydata (name, age, weight, height) VALUES ($1, $2, $3, $4) RETURNING *",
+      [name, age, weight, height]
+    );
+    res.json(newData.rows[0]);
+  } catch (err) {
+    next(err);
+  }
+});
 
 //GET(allplace)
 app.get("/datas", async (req, res, next) => {
