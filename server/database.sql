@@ -1,4 +1,4 @@
-CREABASEATE DAT workoutdata;
+CREATE DATABASE workoutdata;
 
 CREATE TABLE mydata(
     place_id SERIAL PRIMARY KEY,
