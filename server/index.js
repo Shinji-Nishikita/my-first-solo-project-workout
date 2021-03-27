@@ -4,12 +4,19 @@ const cors = require("cors");
 const pool = require("./db");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
+const { Client } = require("pg");
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+});
+client.connect();
 
 //middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
+console.log("Database_URL", process.env.DATABASE_URL);
 // POST;
 app.post("/datas", async (req, res) => {
   try {
