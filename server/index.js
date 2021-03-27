@@ -41,12 +41,12 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 // });
 
 //GET(allplace)
-app.get("/datas", async (req, res) => {
+app.get("/datas", async (req, res, next) => {
   try {
     const alldatas = await pool.query("SELECT * FROM mydata");
     res.json(alldatas.rows);
   } catch (err) {
-    console.error(err.message);
+    next(err);
   }
 });
 
