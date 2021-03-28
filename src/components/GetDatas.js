@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+require("dotenv").config();
 
 const GetDatas = () => {
   const [data, setData] = useState("test");
