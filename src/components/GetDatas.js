@@ -3,17 +3,21 @@ require("dotenv").config();
 
 const GetDatas = () => {
   const [data, setData] = useState("test");
+  console.log("dataは", data);
   const [bmr, setBmr] = useState(0);
   useEffect(() => {
     const getdata = async () => {
       console.log(
         "SERVER_URLは",
-        fetch("https://workout-app-cc.herokuapp.com" + "/datas")
+        await fetch("https://workout-app-cc.herokuapp.com/datas")
       );
       const response = await fetch(
-        "https://workout-app-cc.herokuapp.com" + "/datas"
+        "https://workout-app-cc.herokuapp.com/datas"
       );
+
+      console.log("response.urlは", await response.url.json());
       const jsonData = await response.json();
+
       setData(jsonData);
     };
     getdata();

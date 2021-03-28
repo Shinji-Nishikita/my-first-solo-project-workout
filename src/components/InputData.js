@@ -16,7 +16,7 @@ const InputData = () => {
       height: height.value,
     };
     // console.log(body);
-    await fetch("/datas", {
+    await fetch("https://workout-app-cc.herokuapp.com/datas", {
       method: "POST",
       headers: {
         Accept: "application/json",
