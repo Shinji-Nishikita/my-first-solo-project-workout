@@ -4,10 +4,15 @@ require("dotenv").config();
 const GetDatas = () => {
   const [data, setData] = useState("test");
   const [bmr, setBmr] = useState(0);
-
   useEffect(() => {
     const getdata = async () => {
-      const response = await fetch(process.env.SERVER_URL);
+      console.log(
+        "SERVER_URLは",
+        fetch("https://workout-app-cc.herokuapp.com" + "/datas")
+      );
+      const response = await fetch(
+        "https://workout-app-cc.herokuapp.com" + "/datas"
+      );
       const jsonData = await response.json();
       setData(jsonData);
     };
