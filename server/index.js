@@ -26,7 +26,7 @@ process.on("unhandledRejection", (reason, promise) => {
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
-app.post("/datas", async (req, res, next) => {
+app.post(SERVER_URL, async (req, res, next) => {
   try {
     const { name, age, weight, height } = req.body;
     // console.log(age);
@@ -43,6 +43,7 @@ app.post("/datas", async (req, res, next) => {
 app.get("/datas", async (req, res, next) => {
   try {
     const alldatas = await pool.query("SELECT * FROM mydata");
+    console.log("alldatas is", alldatas);
     res.json(alldatas.rows);
   } catch (err) {
     next(err);
