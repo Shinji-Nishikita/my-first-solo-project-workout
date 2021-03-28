@@ -6,7 +6,7 @@ const GetDatas = () => {
 
   useEffect(() => {
     const getdata = async () => {
-      const response = await fetch(SERVER_URL);
+      const response = await fetch(process.env.SERVER_URL);
       const jsonData = await response.json();
       setData(jsonData);
     };
