@@ -40,7 +40,7 @@ app.post(SERVER_URL, async (req, res, next) => {
   }
 });
 
-app.get("/datas", async (req, res, next) => {
+app.get(SERVER_URL, async (req, res, next) => {
   try {
     const alldatas = await pool.query("SELECT * FROM mydata");
     console.log("alldatas is", alldatas);
