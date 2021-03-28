@@ -13,7 +13,6 @@ const client = new Client({
 });
 client.connect();
 
-//middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "..", "build")));
