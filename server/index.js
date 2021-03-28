@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
 console.log("Database_URL", process.env.DATABASE_URL);
-
+console.log("SERVER_URL", process.env.SERVER_URL);
 process.on("unhandledRejection", (reason, promise) => {
   console.error(reason);
   process.exit(1);
@@ -26,7 +26,7 @@ process.on("unhandledRejection", (reason, promise) => {
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
-app.post(SERVER_URL, async (req, res, next) => {
+app.post("/datas", async (req, res, next) => {
   try {
     const { name, age, weight, height } = req.body;
     // console.log(age);
@@ -40,7 +40,7 @@ app.post(SERVER_URL, async (req, res, next) => {
   }
 });
 
-app.get(SERVER_URL, async (req, res, next) => {
+app.get("/datas", async (req, res, next) => {
   try {
     const alldatas = await pool.query("SELECT * FROM mydata");
     console.log("alldatas is", alldatas);
