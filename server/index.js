@@ -40,18 +40,15 @@ app.post("/datas", async (req, res, next) => {
   }
 });
 
-app.get(
-  "https://workout-app-cc.herokuapp.com/datas",
-  async (req, res, next) => {
-    try {
-      const alldatas = await pool.query("SELECT * FROM mydata");
-      console.log("alldatas is", alldatas);
-      res.json(alldatas.rows);
-    } catch (err) {
-      next(err);
-    }
+app.get("/datas", async (req, res, next) => {
+  try {
+    const alldatas = await pool.query("SELECT * FROM mydata");
+    console.log("alldatas is", alldatas);
+    res.json(alldatas.rows);
+  } catch (err) {
+    next(err);
   }
-);
+});
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
