@@ -17,8 +17,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
-console.log("Database_URL", process.env.DATABASE_URL);
-console.log("SERVER_URL", process.env.SERVER_URL + "datas");
+console.log("Database_URLは", process.env.DATABASE_URL);
+console.log("SERVER_URLは", process.env.SERVER_URL + "datas");
 process.on("unhandledRejection", (reason, promise) => {
   console.error(reason);
   process.exit(1);

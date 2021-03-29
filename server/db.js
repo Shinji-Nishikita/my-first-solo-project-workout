@@ -3,9 +3,10 @@ require("dotenv").config();
 
 const pool = new Pool({
   user: "macforpizza",
-  host: DB_URL,
+  host: process.env.DB_URL,
   port: "5432",
   database: "workoutdata",
 });
+console.log("process.env.DB_URLは", process.env.DB_URL);
 
 module.exports = pool;
