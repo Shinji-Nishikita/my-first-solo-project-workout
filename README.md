@@ -1,2 +1,3 @@
-このリポジトリはCode Chrysalisの生徒であるときに作成しました
-（This was created during my time as a student at Code Chrysalis）
+This is work-out app for our daily life.
+Using JavaScript/React/Express/PostgreSQL
+Let's exercise!!!
